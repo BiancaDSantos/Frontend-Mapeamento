@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="/src/css/index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="/src/js/login.js"></script>
+    </head>
+    <body>
+        <div class="background"></div>
+        <div class="card">
+            <img class="logo"  src="/src/img/4-removebg-preview.png">
+            <h2>Login</h2>
+            <form class="form" id="loginForm" >
+                <input type="email" placeholder="Nome ou E-mail" id="username" name="username" required/>
+                <input type="password" placeholder="Senha" id="password" name="password" required/>
+                <button type="button" onclick="login()">Login</button>
+            </form>
+            <footer>
+                <p id="result" style="color: red;"></p>
+            </footer>
+        </div>
+    </body>
+</html>

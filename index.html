@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/src/css/index_clientes.css">
+    <link rel="stylesheet" href="/src/css/nav.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../src/js/validarLogin.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        td {
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript" src="/src/js/carregar.js">
+    </script>
+    <title>HOME</title>
+</head>
+<body>
+    <header>
+        <nav class="mask">
+            <div class="logo-nav"><a href="#"><img src="/src/img/logo - locfilmes.png" alt="logo"></a></div>
+            <ul class="list">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="">Incubadoras</a></li>
+              <li><a href="">Pré-Incubadoras</a></li>
+              <li><a href="">Aceleradoras</a></li>
+              <li><a href="/main/index.html"><button >Login</button></a></li>
+            </ul>
+            <button class="menu">Menu</button>
+          </nav>
+    </header>
+    <div class="tabela-clientes">
+        <div class="tabela-conteiner">
+            <table id="tabelaAgentes">
+                <thead>
+                    <tr>
+                        <th class="column1">Nome_Agente</th>
+                        <th class="column2">Telefone_Agente</th>
+                        <th class="column3">Descrição</th>
+                        <th class="column4">E-mail</th>
+                        <th class="column4">Tipo_de_Agente</th>
+                        <th class="column4">Endereço</th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="table100-body js-pscroll ps ps--active-y">
+                <table>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

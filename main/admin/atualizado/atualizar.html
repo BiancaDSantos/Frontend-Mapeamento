@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/nav.css">
+    <link rel="stylesheet" href="/src/css/index_criar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Atualizar Agente</title>
+    <style>
+    .card{
+        width: 80vw;
+        margin-top: 100px;
+    }
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .form input {
+        flex: 1 1 calc(50% - 10px);
+        margin: 5px 0;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    #salvarButton {
+        flex: 1 1 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="mask">
+            <div class="logo-nav"><a href="#"><img src="/src/img/logo - locfilmes.png" alt="logo"></a></div>
+            <ul class="list">
+                <li><a href="/main/admin/index.html">Home</a></li>
+                <li><a href="">Incubadoras</a></li>
+                <li><a href="">Pré-Incubadoras</a></li>
+                <li><a href="">Aceleradoras</a></li>
+            </ul>
+            <button class="menu">Menu</button>
+          </nav>
+    </header>
+    <div class="fundo">
+        <div class="background"></div>
+            <div class="card">
+                <img class="logo" src="/src/img/logo - locfilmes.png">
+                <h2 id="formTitle">Atualizar Agente</h2>
+                <div class="form">
+                    <input type="text" placeholder="Nome" id="nome" />
+                    <input type="tel" placeholder="Telefone do Agente" id="telefoneagente" maxlength="15" onkeyup="handlePhone(event)"/>
+                    <input type="text" placeholder="Descrição" id="descricao" />
+                    <input type="text" placeholder="E-Mail" id="email" />
+                    <input type="text" placeholder="Tipo" id="tipo" />
+                    <input type="text" placeholder="Endereço" id="endereco" />
+                    <button onclick='salvarAgente()' id="salvarButton">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/src/js/atualizar.js"></script>
+</body>
+</html>

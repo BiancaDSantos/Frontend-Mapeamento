@@ -17,14 +17,14 @@
     </style>
     <script type="text/javascript" src="/src/js/carregar.js">
     </script>
-    <title>HOME</title>
+    <title>Mapemamento</title>
 </head>
 <body>
     <header>
         <nav class="mask">
-            <div class="logo-nav"><a href="#"><img src="/src/img/logo - locfilmes.png" alt="logo"></a></div>
+            <div class="logo-nav"><img src="/src/img/logo-nav.webp" alt="logo"></div>
             <ul class="list">
-              <li><a href="/index.html">Home</a></li>
+              <!-- <li><a href="/index.html">Home</a></li> -->
               <li><a href="">Incubadoras</a></li>
               <li><a href="">Pré-Incubadoras</a></li>
               <li><a href="">Aceleradoras</a></li>
@@ -38,13 +38,52 @@
             <table id="tabelaAgentes">
                 <thead>
                     <tr>
-                        <th class="column1">Nome_Agente</th>
-                        <th class="column2">Telefone_Agente</th>
-                        <th class="column3">Descrição</th>
-                        <th class="column4">E-mail</th>
-                        <th class="column4">Tipo_de_Agente</th>
-                        <th class="column4">Endereço</th>
+                        <th style="width: 10%;">Nome</th>
+                        <th style="width: 20%;">descricao</th>
+                        <th style="width: 5%;">tipo</th>
+                        <th>Contato</th>
+                        <th>Endereço</th>
+                        <th>Ações</th>
                     </tr>
+                    <!-- 
+                    <tr>
+                        <th rowspan="2">Nome</th>
+                        <th rowspan="2">descricao</th>
+                        <th rowspan="2">tipo</th>
+                        <th colspan="2">Contato</th>
+                        <th colspan="6">Endereço</th>
+                    </tr>
+                    <tr>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Cidade</th>
+                        <th>Logradouro</th>
+                        <th>Número</th>
+                        <th>CEP</th>
+                        <th>Bairro</th>
+                        <th>Complemento</th>
+                    </tr>
+                        
+                    linha.append($("<td/>").html(agente.nome));
+                    linha.append($("<td/>").html(agente.descricao));
+                    linha.append($("<td/>").html(agente.tipo));
+                    linha.append($("<td/>").html(agente.telefone));
+                    linha.append($("<td/>").html(agente.email));
+                    linha.append($("<td/>").html(agente.cidade));
+                    linha.append($("<td/>").html(agente.logradouro));
+                    linha.append($("<td/>").html(agente.numero));
+                    linha.append($("<td/>").html(agente.cep));
+                    linha.append($("<td/>").html(agente.bairro));
+                    linha.append($("<td/>").html(agente.complemento));
+                        <th class="column1">Agente de inovação</th>
+                        <th class="column2">Descrição</th>
+                        <th class="column4">Telefone</th>
+                        <th class="column5">E-mail</th>
+                        <th class="column6">Cidade</th>
+                        <th class="column7">Tipo</th>
+                        <th class="column8">Endereço</th>
+                        <th class="column9"></th>
+                    </tr> -->
                 </thead>
             </table>
             <div class="table100-body js-pscroll ps ps--active-y">

@@ -74,8 +74,8 @@ a {
     display: none;
   }
 }
-.logo-nav > a>img{
-  width: 90px;
+.logo-nav > img{
+  width: 200px;
 }
 li > a > button{
   border: 0;

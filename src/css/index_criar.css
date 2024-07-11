@@ -1,36 +1,4 @@
-/*.formulario-cliente{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-.formulario-conteiner{
-    max-width: 360px;
-    margin: 20px 20px 20px 20px;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 5%;
 
-}
-.formulario-conteiner label{
-    margin-bottom: 5px;
-    margin-top: 10px;
-}
-
-.formulario-conteiner button {
-    margin-top: 10px;
-    border-radius: 25%;
-    width: 100px;
-    height: 40px;
-}
-.card{
-    max-width: 360px;
-}
-*/
 * {
     box-sizing: border-box;
 }
@@ -43,10 +11,7 @@ body {
 .fundo {
     display: grid;
     place-items: center;
-    gap: 50px;
     margin: 0;
-    height: 100vh;
-    padding: 32px;
     background: #eff9ff;
     font-family: "Poppins";
 }
@@ -57,11 +22,11 @@ body {
     z-index: 3;
     width: 94%;
     margin: 20px;
-    padding: 170px 30px 54px;
+    padding: 20px 30px 54px;
     border-radius: 24px;
     background: #ffffff;
     text-align: center;
-    box-shadow: 0 0 8px 4px #e0138c;
+    box-shadow: 0 0 8px 4px #e7bcf0;
 }
 
 @media (min-width: 500px) {
@@ -75,17 +40,6 @@ body {
     }
 }
 
-.card::before {
-    content: "";
-    position: absolute;
-    top: -880px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1000px;
-    height: 1000px;
-    border-radius: 50%;
-    background: #216ce7;
-}
 
 .card .logo {
     position: absolute;

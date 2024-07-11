@@ -11,10 +11,7 @@ $(document).ready(function() {
                     linha.append($("<td/>").html(agente.tipo));
                     linha.append($("<td style=\"white-space: pre-line\"/>")
                         .html(`Telefone: ${agente.telefone}\n Email: ${agente.email}`));
-                    // linha.append($("<td/>").html(agente.telefone));
-                    // linha.append($("<td/>").html(agente.email));
-                    linha.append($("<td style=\"white-space: pre-line\"/>").html(`Cidade: ${agente.cidade?.nome ?? ""} \nLogradouro: ${agente.logradouro} \nNumero: ${agente.numero} \nCep: ${agente.cep} \nBairro: ${agente.bairro} \nComplemento: ${agente.complemento}`));
-                    linha.append($("<td>").html("<i class='fa-solid fa-xmark' style='color: #fd0d0d;'></i><i class='fa-solid fa-pen-to-square' style='color: #3dff6e; margin-left: 10px;'></i>"));
+                    linha.append($("<td style=\"white-space: pre-line\"/>").html(`Cidade: ${agente.cidade?.nome ?? ""} \nLogradouro: ${agente.logradouro} \nNumero: ${agente.numero} \nCep: ${agente.cep} \nBairro: ${agente.bairro} \nComplemento: ${agente.complemento?? "Nada consta."}`));
                     linha.attr('data-id', agente.id);
                     $(tabelaAgentes).append(linha);
                 }

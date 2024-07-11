@@ -6,13 +6,12 @@ $(document).ready(function() {
                 const lista = response.data;
                 for (const agente of lista) {
                     let linha = $("<tr/>");
-                    linha.append($("<td/>").html(agente.id));
-                    linha.append($("<td/>").html(agente.nomeagente));
-                    linha.append($("<td/>").html(agente.telefoneagente));
+                    linha.append($("<td/>").html(agente.nome));
                     linha.append($("<td/>").html(agente.descricao));
-                    linha.append($("<td/>").html(agente.email));
                     linha.append($("<td/>").html(agente.tipo));
-                    linha.append($("<td/>").html(agente.endereco));
+                    linha.append($("<td style=\"white-space: pre-line\"/>")
+                        .html(`Telefone: ${agente.telefone}\n Email: ${agente.email}`));
+                    linha.append($("<td style=\"white-space: pre-line\"/>").html(`Cidade: ${agente.cidade?.nome ?? ""} \nLogradouro: ${agente.logradouro} \nNumero: ${agente.numero} \nCep: ${agente.cep} \nBairro: ${agente.bairro} \nComplemento: ${agente.complemento}`));
                     linha.append($("<td>").html("<i class='fa-solid fa-xmark' style='color: #fd0d0d;'></i><i class='fa-solid fa-pen-to-square' style='color: #3dff6e; margin-left: 10px;'></i>"));
                     linha.attr('data-id', agente.id);
                     $(tabelaAgentes).append(linha);

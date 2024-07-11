@@ -28,9 +28,18 @@ $(document).ready(function() {
 
         // Verificar se o ícone de edição foi clicado
         if ($(event.target).hasClass('fa-pen-to-square')) {
-            window.location.href = `/main/admin/atualizado/atualizar.html?agenteId=${agenteId}`;
-        } else if (agenteId) {
-            window.location.href = `/produtos/registro/movimentacao.html?agenteId=${agenteId}`;
-        }
+            // window.location.href = `/main/admin/atualizado/atualizar.html?agenteId=${agenteId}`;
+            const modal = document.getElementById("modal")
+            modal.style.display = "block"
+            
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        } 
+        // else if (agenteId) {
+        //     window.location.href = `/produtos/registro/movimentacao.html?agenteId=${agenteId}`;
+        // }
     });
 });

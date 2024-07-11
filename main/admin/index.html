@@ -5,16 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="/src/css/index_clientes.css">
     <link rel="stylesheet" href="/src/css/nav.css">
+    <link rel="stylesheet" href="/src/css/index_criar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../src/js/validarLogin.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        td {
-            cursor: pointer;
-        }
-    </style>
     <script type="text/javascript" src="/src/js/carregarAdmin.js"></script>
     <script src="/src/js/nav.js"></script>
     <title>Administrador</title>
@@ -57,6 +53,29 @@
                     <tbody>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="fundo">
+                <div class="background"></div>
+                    <div class="card">
+                        <img class="logo" src="/src/img/logo - locfilmes.png">
+                        <h2 id="formTitle">Atualizar Agente</h2>
+                        <div class="form">
+                            <input type="text" placeholder="Nome" id="nome" />
+                            <input type="tel" placeholder="Telefone do Agente" id="telefoneagente" maxlength="15" onkeyup="handlePhone(event)"/>
+                            <input type="text" placeholder="Descrição" id="descricao" />
+                            <input type="text" placeholder="E-Mail" id="email" />
+                            <input type="text" placeholder="Tipo" id="tipo" />
+                            <input type="text" placeholder="Endereço" id="endereco" />
+                            <button onclick='salvarAgente()' id="salvarButton">Salvar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

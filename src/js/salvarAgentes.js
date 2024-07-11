@@ -37,6 +37,7 @@ const preencheCidadesNoSelect = (modal) => {
                 for (const cidade of listaDeCidades) {
                     let opcaoCidade = $("<option/>")[0];
                     opcaoCidade.value = cidade.id
+                    opcaoCidade.id = cidade.id
                     opcaoCidade.append(cidade.nome)
                     selectDeCidades.append(opcaoCidade)
                 }
@@ -53,12 +54,46 @@ function cadastrarNovoAgente() {
 
     preencheCidadesNoSelect(modal);
 
+    let inputs = modal.querySelectorAll("input, select")
+
+    insertDadosDoAgenteNosInputs({}, inputs)
 
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     };
+}
+
+const insertDadosDoAgenteNosInputs = (agente, inputs) => {
+    for (let input of inputs) {
+        if (input.id == "cidade") {
+            for (let opcao of input.childNodes) {
+                if (opcao.id == agente.cidade.id) opcao.selected = true
+            }
+        } else if (input.id == "tipo") {
+            for (let opcao of input.childNodes) {
+                if (opcao.id == agente.tipo) opcao.selected = true
+            }
+        } else {
+            input.value = agente[input.id] || ""
+        }
+    }
+}
+
+const preencheDadosDoAgente = (agenteId, modal) => {
+    axios
+    .get("http://127.0.0.1:8080/agente/" + agenteId)
+    .then((response) => {
+        if (response.status === 200) {
+            const agente = response.data;
+            let inputs = modal.querySelectorAll("input, select")
+            insertDadosDoAgenteNosInputs(agente, inputs)
+        }
+    })
+    .catch((err) => {
+        alert(`Erro não Mapeado: ${err.message}`);
+    });
 }
 
 function salvarAgente() {

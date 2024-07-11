@@ -16,7 +16,7 @@ $(document).ready(function () {
         .get("http://127.0.0.1:8080/agente")
         .then((response) => {
             if (response.status === 200) {
-                const lista = response.data.filter(agente => tipo == null || agente.tipo == tipo);
+                const lista = response.data.filter(agente => tipo == null || agente.tipo == tipo).sort((a,b) => a.id - b.id);
                 for (const agente of lista) {
                     let linha = $("<tr/>");
                     linha.append($("<td/>").html(agente.nome));
@@ -57,35 +57,7 @@ $(document).ready(function () {
     $(document).on("click", "#tabelaAgentes tr", function (event) {
         const agenteId = $(this).data("id");
 
-        const preencheDadosDoAgente = (agenteId, modal) => {
-            axios
-            .get("http://127.0.0.1:8080/agente/" + agenteId)
-            .then((response) => {
-                if (response.status === 200) {
-                    const agente = response.data;
-                    console.log(agente)
-                    let inputs = modal.querySelectorAll("input, select")
-                    for (let input of inputs) {
-                        if (input.id == "cidade") {
-                            for (let opcao of input.childNodes) {
-                                if (opcao.id == agente.cidade.id) opcao.selected = true
-                            }
-                        } else if (input.id == "tipo") {
-                            console.log(input.id)
-                            for (let opcao of input.childNodes) {
-                                console.log(opcao)
-                                if (opcao.id == agente.tipo) opcao.selected = true
-                            }
-                        } else {
-                            input.value = agente[input.id]
-                        }
-                    }
-                }
-            })
-            .catch((err) => {
-                alert(`Erro não Mapeado: ${err.message}`);
-            });
-        }
+        
 
         // Verificar se o ícone de edição foi clicado
         if ($(event.target).hasClass("fa-pen-to-square")) {

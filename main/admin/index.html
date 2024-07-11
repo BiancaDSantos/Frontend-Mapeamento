@@ -27,7 +27,7 @@
                   <li><a href="?tipo=PREINCUBADORA">Pré-Incubadoras</a></li>
                   <li><a href="?tipo=INCUBADORA">Incubadoras</a></li>
                   <li><a href="?tipo=ACELERADORA">Aceleradoras</a></li>
-                  <li><button onclick="cadastrarNovoAgente()" >Cadastrar</button></li>
+                  <li><p id="buttonCadastrar" onclick="cadastrarNovoAgente()" >Cadastrar</p></li>
                   <li><a href="/"><button >Sing out</button></a></li>
                 </ul>
             </div>
@@ -42,9 +42,9 @@
                         <th style="width: 10%;">Nome</th>
                         <th style="width: 20%;">Descricao</th>
                         <th style="width: 8%;">Tipo</th>
-                        <th style="width: 15%;">Contato</th>
+                        <th style="width: 5%;">Contato</th>
                         <th style="width: 18%;">Endereço</th>
-                        <th>Ações</th>
+                        <th style="width: 3%;">Ações</th>
                     </tr>
                 </thead>
             </table>
@@ -59,38 +59,36 @@
 
     <div id="modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
             <div class="fundo">
                 <div class="background"></div>
                     <div class="card">
                         <h2 id="formTitle">Atualizar Agente</h2>
                         <div class="form">
                             <input type="number" style="display: none;" id="id">
-                            <label>Nome</label>
+                            <label>Nome <span style="color: red;">*</span></label>
                             <input type="text" placeholder="Projeto X" id="nome">
-                            <label>Tipo</label>
+                            <label>Tipo <span style="color: red;">*</span></label>
                             <select name="tipo" id="tipo">
                                 <option id="PREINCUBADORA" value="PREINCUBADORA">Pré-Incubadora</option>
                                 <option id="INCUBADORA" value="INCUBADORA">Incubadora</option>
                                 <option id="ACELERADORA" value="ACELERADORA">Aceleradora</option>
                             </select>
-                            <label>Descrição</label>
+                            <label>Descrição <span style="color: red;">*</span></label>
                             <input type="text" placeholder="Descreva seu projeto aqui..." id="descricao" />
-                            <label>Telefone</label>
+                            <label>Telefone <span style="color: red;">*</span></label>
                             <input type="tel" placeholder="(XX) XXXXX - XXXX" id="telefone" maxlength="15" onkeyup="handlePhone(event)"/>
-                            <label>E-mail</label>
+                            <label>E-mail <span style="color: red;">*</span></label>
                             <input type="text" placeholder="examplo@exemplo.com.br" id="email" />
-                            <label>Cidade</label>
-                            <!-- <input type="text"id="cidade" /> -->
+                            <label>Cidade <span style="color: red;">*</span></label>
                             <select name="cidade" id="cidade">
                             </select>
-                            <label>Logradouro</label>
+                            <label>Logradouro <span style="color: red;">*</span></label>
                             <input type="text" placeholder="Rua, Av, ..." id="logradouro" />
-                            <label>Número</label>
+                            <label>Número <span style="color: red;">*</span></label>
                             <input type="text" placeholder="45A" id="numero" />
-                            <label>Cep</label>
+                            <label>Cep <span style="color: red;">*</span></label>
                             <input type="text" placeholder="XXXXX-XXX" id="cep" />
-                            <label>Bairro</label>
+                            <label>Bairro <span style="color: red;">*</span></label>
                             <input type="text" placeholder="Jardim Oliveira" id="bairro" />
                             <label>Complemento</label>
                             <input type="text" placeholder="Bloco D, ao lado de..." id="complemento" />

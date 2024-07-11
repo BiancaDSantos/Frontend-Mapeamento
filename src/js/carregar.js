@@ -16,7 +16,7 @@ $(document).ready(function() {
         .get("http://127.0.0.1:8080/agente")
         .then((response) => {
             if (response.status === 200) {
-                const lista = response.data.filter(agente => tipo == null || agente.tipo == tipo);
+                const lista = response.data.filter(agente => tipo == null || agente.tipo == tipo).sort((a,b) => a.id - b.id);
                 for (const agente of lista) {
                     let linha = $("<tr/>");
                     linha.append($("<td/>").html(agente.nome));

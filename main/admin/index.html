@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="/src/css/nav.css">
     <link rel="stylesheet" href="/src/css/index_criar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../src/js/validarLogin.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script type="text/javascript" src="/src/js/carregarAdmin.js"></script>
-    <script src="/src/js/nav.js"></script>
+    <script type="text/javascript" src="/src/js/salvarAgentes.js"></script>
     <title>Administrador</title>
 </head>
 <body>
@@ -24,10 +23,11 @@
                     <h4>O que você procura?</h4>
                 </div>
                 <ul class="list">
-                  <!-- <li><a href="/index.html">Home</a></li> -->
-                  <li><a href="">Pré-Incubadoras</a></li>
-                  <li><a href="">Incubadoras</a></li>
-                  <li><a href="">Aceleradoras</a></li>
+                  <li><a href="?">Tudo</a></li>
+                  <li><a href="?tipo=PREINCUBADORA">Pré-Incubadoras</a></li>
+                  <li><a href="?tipo=INCUBADORA">Incubadoras</a></li>
+                  <li><a href="?tipo=ACELERADORA">Aceleradoras</a></li>
+                  <li><button onclick="cadastrarNovoAgente()" >Cadastrar</button></li>
                   <li><a href="/"><button >Sing out</button></a></li>
                 </ul>
             </div>
@@ -65,13 +65,51 @@
                     <div class="card">
                         <h2 id="formTitle">Atualizar Agente</h2>
                         <div class="form">
-                            <input type="text" placeholder="Nome" id="nome" />
-                            <input type="tel" placeholder="Telefone do Agente" id="telefoneagente" maxlength="15" onkeyup="handlePhone(event)"/>
-                            <input type="text" placeholder="Descrição" id="descricao" />
-                            <input type="text" placeholder="E-Mail" id="email" />
-                            <input type="text" placeholder="Tipo" id="tipo" />
-                            <input type="text" placeholder="Endereço" id="endereco" />
+                            <input type="number" style="display: none;" id="id">
+                            <label>Nome</label>
+                            <input type="text" placeholder="Projeto X" id="nome">
+                            <label>Tipo</label>
+                            <select name="tipo" id="tipo">
+                                <option id="PREINCUBADORA" value="PREINCUBADORA">Pré-Incubadora</option>
+                                <option id="INCUBADORA" value="INCUBADORA">Incubadora</option>
+                                <option id="ACELERADORA" value="ACELERADORA">Aceleradora</option>
+                            </select>
+                            <label>Descrição</label>
+                            <input type="text" placeholder="Descreva seu projeto aqui..." id="descricao" />
+                            <label>Telefone</label>
+                            <input type="tel" placeholder="(XX) XXXXX - XXXX" id="telefone" maxlength="15" onkeyup="handlePhone(event)"/>
+                            <label>E-mail</label>
+                            <input type="text" placeholder="examplo@exemplo.com.br" id="email" />
+                            <label>Cidade</label>
+                            <!-- <input type="text"id="cidade" /> -->
+                            <select name="cidade" id="cidade">
+                            </select>
+                            <label>Logradouro</label>
+                            <input type="text" placeholder="Rua, Av, ..." id="logradouro" />
+                            <label>Número</label>
+                            <input type="text" placeholder="45A" id="numero" />
+                            <label>Cep</label>
+                            <input type="text" placeholder="XXXXX-XXX" id="cep" />
+                            <label>Bairro</label>
+                            <input type="text" placeholder="Jardim Oliveira" id="bairro" />
+                            <label>Complemento</label>
+                            <input type="text" placeholder="Bloco D, ao lado de..." id="complemento" />
                             <button onclick='salvarAgente()' id="salvarButton">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalExcluirAgente" class="modal">
+        <div class="modal-content">
+            <div class="fundo">
+                <div class="background"></div>
+                    <div class="card">
+                        <h2 id="formTitle">Deseja excluir esse agente?</h2>
+                        <div class="form">
+                            <p id="informacao-agente-excluir"></p>
+                            <button id="confirma-excluisao">excluir</button>
                         </div>
                     </div>
                 </div>

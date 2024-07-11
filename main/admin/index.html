@@ -20,22 +20,35 @@
     <title>Administrador</title>
 </head>
 <body>
-    <header id="navbar">
-
+    <header>
+        <nav class="mask">
+            <div class="logo-nav"><img src="/src/img/logo-nav-outro.png" alt="logo"></div>
+            <div class="container-nav">
+                <div class="frase-nav">
+                    <h4>O que você procura?</h4>
+                </div>
+                <ul class="list">
+                  <!-- <li><a href="/index.html">Home</a></li> -->
+                  <li><a href="">Pré-Incubadoras</a></li>
+                  <li><a href="">Incubadoras</a></li>
+                  <li><a href="">Aceleradoras</a></li>
+                  <li><a href="/"><button >Sing out</button></a></li>
+                </ul>
+            </div>
+            <button class="menu">Menu</button>
+          </nav>
     </header>
     <div class="tabela-clientes">
         <div class="tabela-conteiner">
             <table id="tabelaAgentes">
                 <thead>
                     <tr>
-                        <th class="column1">ID</th>
-                        <th class="column2">Nome_Agente</th>
-                        <th class="column2">Telefone_Agente</th>
-                        <th class="column4">Descrição</th>
-                        <th class="column4">E-mail</th>
-                        <th class="column1">Tipo</th>
-                        <th class="column4">Endereço</th>
-                        <th class="column2">Config</th>
+                        <th style="width: 10%;">Nome</th>
+                        <th style="width: 20%;">Descricao</th>
+                        <th style="width: 8%;">Tipo</th>
+                        <th style="width: 15%;">Contato</th>
+                        <th style="width: 18%;">Endereço</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
             </table>

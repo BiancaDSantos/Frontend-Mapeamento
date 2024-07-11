@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/src/css/index_criar.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/src/js/nav.js"></script>
     <title>Atualizar Agente</title>
     <style>
     .card{
@@ -32,20 +33,23 @@
         padding: 10px;
         margin-top: 10px;
     }
+    #nome{
+        max-width: 300px;
+    }
+    #telefoneagente{
+        max-width: 170px;
+    }
+    #email{
+        max-width:400px;
+    }
+    #tipo{
+        max-width: 170px;
+    }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="mask">
-            <div class="logo-nav"><a href="#"><img src="/src/img/logo - locfilmes.png" alt="logo"></a></div>
-            <ul class="list">
-                <li><a href="/main/admin/index.html">Home</a></li>
-                <li><a href="">Incubadoras</a></li>
-                <li><a href="">Pré-Incubadoras</a></li>
-                <li><a href="">Aceleradoras</a></li>
-            </ul>
-            <button class="menu">Menu</button>
-          </nav>
+    <header id="navbar">
+        
     </header>
     <div class="fundo">
         <div class="background"></div>
@@ -55,10 +59,10 @@
                 <div class="form">
                     <input type="text" placeholder="Nome" id="nome" />
                     <input type="tel" placeholder="Telefone do Agente" id="telefoneagente" maxlength="15" onkeyup="handlePhone(event)"/>
-                    <input type="text" placeholder="Descrição" id="descricao" />
+                    <input type="text" placeholder="Endereço" id="endereco" />
                     <input type="text" placeholder="E-Mail" id="email" />
                     <input type="text" placeholder="Tipo" id="tipo" />
-                    <input type="text" placeholder="Endereço" id="endereco" />
+                    <input type="text" placeholder="Descrição" id="descricao" />
                     <button onclick='salvarAgente()' id="salvarButton">Salvar</button>
                 </div>
             </div>

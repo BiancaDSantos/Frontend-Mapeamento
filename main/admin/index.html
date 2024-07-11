@@ -14,38 +14,51 @@
         td {
             cursor: pointer;
         }
+        
     </style>
-    <script type="text/javascript" src="/src/js/carregarAdmin.js"></script>
-    <script src="/src/js/nav.js"></script>
-    <title>Administrador</title>
+    <script type="text/javascript" src="/src/js/carregarAdmin.js">
+    </script>
+    <title>HOME</title>
 </head>
 <body>
-    <header id="navbar">
-
+    <header>
+        <nav class="mask">
+            <div class="logo-nav"><img src="/src/img/logo-nav.webp" alt="logo"></div>
+            <ul class="list">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="">Incubadoras</a></li>
+                <li><a href="">Pré-Incubadoras</a></li>
+                <li><a href="">Aceleradoras</a></li>
+                <li><a href="/main/index.html"><button>Login</button></a></li>
+            </ul>
+            <button class="menu">Menu</button>
+        </nav>
     </header>
     <div class="tabela-clientes">
         <div class="tabela-conteiner">
             <table id="tabelaAgentes">
                 <thead>
                     <tr>
-                        <th class="column1">ID</th>
-                        <th class="column2">Nome_Agente</th>
-                        <th class="column2">Telefone_Agente</th>
-                        <th class="column4">Descrição</th>
-                        <th class="column4">E-mail</th>
-                        <th class="column1">Tipo</th>
-                        <th class="column4">Endereço</th>
-                        <th class="column2">Config</th>
+                        <th style="width: 10%;">Nome</th>
+                        <th style="width: 5%;">tipo</th>
+                        <th>Contato</th>
+                        <th>Cidade</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
+                <tbody>
+                    <!-- Conteúdo carregado dinamicamente -->
+                </tbody>
             </table>
-            <div class="table100-body js-pscroll ps ps--active-y">
-                <table>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
 </body>
 </html>
